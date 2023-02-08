@@ -1,0 +1,8 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+app_name: Pollster
+micros:
+  - name: pollster
+    src: .
+    engine: svelte-kit
+    primary: true
