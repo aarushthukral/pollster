@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link href="%sveltekit.assets%/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="%sveltekit.assets%/favicon.png" rel="icon" />
+    <link
+      href="%sveltekit.assets%/favicon-dark.png"
+      rel="icon"
+      media="(prefers-color-scheme: dark)" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#000001" />
+    <meta property="og:site_name" content="Pollster" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
 </html>

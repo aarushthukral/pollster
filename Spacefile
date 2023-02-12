@@ -1,8 +1,24 @@
 # Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
 v: 0
 app_name: Pollster
+icon: ./static/icon.png
 micros:
   - name: pollster
     src: .
     engine: svelte-kit
     primary: true
+    public_routes:
+      - /polls/*
+      - /favicon.svg
+      - /favicon-dark.png
+      - /favicon.png
+      - /favicon.ico
+      - /og
+      - /og.png
+      - /_app/*
+    actions:
+      - id: "webhooks"
+        name: "Trigger Webhooks"
+        description: "Send POST requests to webhooks specified for polls that have ended in the past hour"
+        trigger: "schedule"
+        default_interval: "1 hour"

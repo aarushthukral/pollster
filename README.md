@@ -1,38 +1,33 @@
-# create-svelte
+<div align="center">
+  <a href="https://github.com/aarushthukral/pollster">
+    <img src="static/icon.png" alt="Logo" width="128" height="128">
+  </a>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+  <h1 align="center">Pollster</h1>
 
-## Creating a project
+  <p align="center">
+    Make every voice count, with polls that matter.
+  </p>
 
-If you're seeing this, you've probably already done this step. Congrats!
+  <br />
+  <img src="static/poll-screenshot.png" alt="A screenshot of a poll with the question: What's your favourite color?" />
+  <img src="static/dashboard-screenshot.png" alt="A screenshot of the Pollster dashboard" />
+  <br />
+  <br />
+</div>
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## About
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Pollster is an easy-to-use web app that allows you to create polls for any purpose and gather opinions in no time. This project was built during the [2023 Deta Shipathon](https://deta.space/blog/sprint-to-space).
 
-## Developing
+- Create a poll and share it with your participants in less than a minute
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Add as many options as you want and share it with unlimited participants
 
-```bash
-npm run dev
+- Each poll has dynamically generated social images and custom URLs
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## License
 
-## Building
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+For any queries, contact [pollster@aarush.dev](mailto:pollster@aarush.dev)
