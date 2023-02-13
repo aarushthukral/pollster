@@ -17,11 +17,13 @@
 <main class="flex min-h-screen flex-col">
   <div class="my-auto flex flex-col items-center">
     <div class="flex items-center gap-4">
-      <Logo class="h-20 w-20" />
+      <Logo class="h-12 w-12 sm:h-20 sm:w-20" />
       <h1 class="select-none text-center text-6xl font-bold sm:text-8xl">Pollster</h1>
     </div>
-    <div class="mt-6">
-      <p class="text-center text-3xl">Make every voice count, <br />with polls that matter.</p>
+    <div class="mt-3 sm:mt-6">
+      <p class="text-center text-2xl sm:text-3xl">
+        Make every voice count, <br />with polls that matter.
+      </p>
     </div>
     <div class="mt-8 flex gap-4">
       <a
