@@ -1,4 +1,5 @@
 import { polls, votes } from "$lib/server/database";
+import { getResults } from "$lib/results";
 import type { DetaEvent, Poll, Vote } from "$lib/types";
 import type { RequestHandler } from "./$types";
 
@@ -44,16 +45,3 @@ export const POST = (async ({ request }) => {
 
   return new Response(null, { status: 200 });
 }) satisfies RequestHandler;
-
-function getResults(votes: Vote[], poll: Poll) {
-  const result: Record<string, number> = {};
-
-  poll.options.forEach((option) => {
-    result[option.key] = 0;
-  });
-
-  return votes.reduce((acc, vote) => {
-    acc[vote.option] += 1;
-    return acc;
-  }, result);
-}
