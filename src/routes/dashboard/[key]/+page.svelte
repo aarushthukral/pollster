@@ -28,22 +28,22 @@
 <EditModal {poll} bind:isOpen={isEditModalOpen} />
 <DeleteModal bind:isOpen={isDeleteModalOpen} />
 
-<div class="py-4 px-6">
-  <div class="flex items-center justify-end gap-4">
+<div class="w-full py-4 px-6">
+  <div class="flex flex-wrap items-center justify-center gap-2 sm:justify-end sm:gap-4">
     <ShareButton slug={poll.slug} />
     <button
       on:click={() => (isEditModalOpen = true)}
-      class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white">
+      class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-white sm:text-lg">
       <PencilAltIcon class="h-6 w-6" /> Edit
     </button>
     <button
       on:click={() => (isDeleteModalOpen = true)}
-      class="flex items-center gap-2 rounded-lg bg-red-600 px-3 py-2 text-lg text-white">
+      class="flex items-center gap-2 rounded-lg bg-red-600 px-3 py-2 text-white sm:text-lg">
       <TrashIcon class="h-6 w-6" /> Delete
     </button>
   </div>
   <div class="mt-4 rounded-xl bg-white p-6">
-    <h2 class="mb-2 text-5xl font-bold">{poll.title}</h2>
+    <h2 class="mb-2 text-4xl font-bold sm:text-5xl">{poll.title}</h2>
     {#if poll.description}
       <h3 class="text-xl">{poll.description}</h3>
     {/if}

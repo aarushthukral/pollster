@@ -60,7 +60,9 @@
         leave="ease-in duration-200"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95">
-        <span class="inline-block h-screen align-middle" aria-hidden="true"> &#8203; </span>
+        <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
+          &#8203;
+        </span>
 
         <form
           method="POST"
@@ -69,8 +71,8 @@
           class="my-8 inline-block w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
           <DialogTitle as="h3" class="text-center text-3xl font-semibold">Edit Poll</DialogTitle>
 
-          <div class="mt-4 grid grid-cols-2 gap-y-4 gap-x-6">
-            <div class="col-span-2">
+          <div class="mt-4 grid gap-y-4 gap-x-6 sm:grid-cols-2">
+            <div class="sm:col-span-2">
               <label for="title" class="text-md ml-1 block font-medium">Title</label>
               <div>
                 <input
@@ -85,7 +87,7 @@
               </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="sm:col-span-2">
               <label for="description" class="text-md ml-1 block font-medium">Description</label>
               <div>
                 <input
@@ -99,7 +101,7 @@
               </div>
             </div>
 
-            <div class="col-span-2">
+            <div class="sm:col-span-2">
               <label for="options" class="text-md ml-1 block font-medium">Options</label>
               {#each Array(optionCount) as _, i}
                 <div>

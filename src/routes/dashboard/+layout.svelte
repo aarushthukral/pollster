@@ -4,6 +4,8 @@
   import { page } from "$app/stores";
   import type { PageData } from "./$types";
 
+  let showSidebar = false;
+
   export let data: PageData;
   $: polls = data.polls;
 </script>
@@ -16,9 +18,13 @@
     url="{$page.url.origin}/dashboard" />
 </svelte:head>
 
-<div class="grid h-screen grid-cols-4 overflow-hidden bg-gray-50 xl:grid-cols-5">
-  <Sidebar {polls} />
-  <main class="col-span-3 overflow-y-auto xl:col-span-4">
+<div class="flex h-screen w-full flex-col sm:flex-row">
+  <Sidebar {polls} bind:show={showSidebar} />
+  <main
+    class="flex-grow overflow-y-auto bg-gray-50 sm:flex"
+    class:flex={!showSidebar}
+    class:hidden={showSidebar}
+    class:justify-center={$page.url.pathname === "/dashboard"}>
     <slot />
   </main>
 </div>

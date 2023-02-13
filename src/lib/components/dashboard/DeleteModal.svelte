@@ -33,18 +33,20 @@
         leave="ease-in duration-200"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95">
-        <span class="inline-block h-screen align-middle" aria-hidden="true"> &#8203; </span>
+        <span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
+          &#8203;
+        </span>
 
         <form
           method="POST"
           action="?/delete"
           use:enhance
-          class="my-8 inline-block max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+          class="my-8 inline-block max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
           <div>
             <DialogTitle as="h3" class="text-center text-3xl font-semibold"
               >Delete Poll</DialogTitle>
             <DialogDescription class="mt-1 text-center"
-              >Are you sure you want to delete this poll? <br />This action can't be undone.</DialogDescription>
+              >Are you sure you want to delete this poll? This action can't be undone.</DialogDescription>
           </div>
           <div class="mt-8 flex justify-end gap-4">
             <button

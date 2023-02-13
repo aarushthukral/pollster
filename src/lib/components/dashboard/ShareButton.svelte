@@ -9,7 +9,8 @@
 </script>
 
 <Popover class="relative" let:open>
-  <PopoverButton class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white">
+  <PopoverButton
+    class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-white sm:text-lg">
     <ShareIcon class="h-6 w-6" /> Share
   </PopoverButton>
   <Transition
@@ -20,7 +21,7 @@
     leaveFrom="opacity-100 translate-y-0"
     leaveTo="opacity-0 translate-y-1">
     <PopoverPanel
-      class="absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0">
+      class="absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/4 transform px-4 sm:-translate-x-1/2 sm:px-0">
       <div class="overflow-hidden rounded-lg border border-gray-200 bg-white px-6 py-4 shadow-lg">
         <p class="text-md font-medium">Use the link below to share your poll:</p>
         <div class="mt-1 flex h-8 w-full">
