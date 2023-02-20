@@ -1,7 +1,7 @@
 import { Deta } from "deta";
-import { DETA_PROJECT_KEY as projectKey } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
-const deta = Deta(projectKey);
+const deta = Deta(env.DETA_PROJECT_KEY);
 
 const polls = deta.Base("polls");
 const votes = deta.Base("votes");
