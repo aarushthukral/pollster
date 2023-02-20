@@ -23,7 +23,7 @@
         leave="ease-in duration-200"
         leaveFrom="opacity-100"
         leaveTo="opacity-0">
-        <DialogOverlay class="fixed inset-0 bg-black bg-opacity-25" />
+        <DialogOverlay class="fixed inset-0 bg-black bg-opacity-25 backdrop-blur" />
       </TransitionChild>
 
       <TransitionChild
@@ -41,7 +41,7 @@
           method="POST"
           action="?/delete"
           use:enhance
-          class="my-8 inline-block max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+          class="my-8 inline-block max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-black">
           <div>
             <DialogTitle as="h3" class="text-center text-3xl font-semibold"
               >Delete Poll</DialogTitle>
@@ -52,7 +52,8 @@
             <button
               type="button"
               on:click={() => (isOpen = false)}
-              class="rounded-lg bg-gray-200 px-3 py-2 text-lg text-black">Cancel</button>
+              class="rounded-lg bg-gray-200 px-3 py-2 text-lg text-black dark:bg-gray-600 dark:text-white"
+              >Cancel</button>
             <button
               on:click={async () => {
                 isOpen = false;

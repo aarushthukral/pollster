@@ -33,7 +33,7 @@
     <ShareButton slug={poll.slug} />
     <button
       on:click={() => (isEditModalOpen = true)}
-      class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-white sm:text-lg">
+      class="flex items-center gap-2 rounded-lg bg-black dark:bg-white dark:text-black px-3 py-2 text-white sm:text-lg">
       <PencilAltIcon class="h-6 w-6" /> Edit
     </button>
     <button
@@ -42,7 +42,7 @@
       <TrashIcon class="h-6 w-6" /> Delete
     </button>
   </div>
-  <div class="mt-4 rounded-xl bg-white p-6">
+  <div class="mt-4 rounded-xl bg-white p-6 dark:bg-black">
     <h2 class="mb-2 text-4xl font-bold sm:text-5xl">{poll.title}</h2>
     {#if poll.description}
       <h3 class="text-xl">{poll.description}</h3>
@@ -84,8 +84,10 @@
             )}%
           </p>
         </div>
-        <div class="mt-1 h-6 w-full rounded-full bg-gray-100">
-          <div class="h-6 rounded-full bg-gray-300" style="width: {percentResults[option.key]}%" />
+        <div class="mt-1 h-6 w-full rounded-full bg-gray-100 dark:bg-gray-900">
+          <div
+            class="h-6 rounded-full bg-gray-300 dark:bg-gray-700"
+            style="width: {percentResults[option.key]}%" />
         </div>
       </div>
     {/each}

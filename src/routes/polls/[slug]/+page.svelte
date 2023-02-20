@@ -45,13 +45,14 @@
       {#each pollOptions as option, i}
         <RadioGroupOption class="my-3 sm:my-6" value={option.key} let:checked>
           <div
-            class="relative w-full rounded-xl border-2"
+            class="relative w-full rounded-xl border-2 dark:border-gray-700"
             class:border-black={checked}
             class:hover:bg-gray-100={!voted}
+            class:dark:hover:bg-gray-800={!voted}
             class:cursor-pointer={!voted}>
             {#if results}
               <div
-                class="absolute top-0 left-0 -z-10 h-full rounded-r-xl bg-gray-100"
+                class="absolute top-0 left-0 -z-10 h-full rounded-r-xl bg-gray-100 dark:bg-gray-800"
                 style="width: {results[option.key]}%"
                 in:fade={{ duration: 300, delay: i * 300 }} />
               <div
@@ -77,7 +78,7 @@
   {#if !voted}
     <div class="flex w-full items-center justify-end">
       <button
-        class="flex items-center gap-2 rounded-lg bg-black py-2 px-4 text-xl text-white disabled:cursor-not-allowed disabled:opacity-60 sm:px-8 sm:py-4 sm:text-2xl"
+        class="flex items-center gap-2 rounded-lg bg-black py-2 px-4 text-xl text-white disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black sm:px-8 sm:py-4 sm:text-2xl"
         disabled={selected === ""}
         out:fade={{ duration: 300 }}><CheckIcon class="h-8 w-8" /> Vote</button>
     </div>

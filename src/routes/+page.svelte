@@ -28,7 +28,7 @@
     <div class="mt-8 flex gap-4">
       <a
         href="/dashboard"
-        class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white">
+        class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white dark:bg-white dark:text-black">
         <ChartBarIcon class="h-6 w-6" />
         Dashboard
       </a>
@@ -36,7 +36,7 @@
         href="https://github.com/aarushthukral/pollster"
         target="_blank"
         rel="noreferrer"
-        class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white">
+        class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white dark:bg-white dark:text-black">
         <GitHubIcon class="h-6 w-6" />
         GitHub
       </a>

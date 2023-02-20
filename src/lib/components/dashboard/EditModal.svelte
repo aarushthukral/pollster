@@ -50,7 +50,7 @@
         leave="ease-in duration-200"
         leaveFrom="opacity-100"
         leaveTo="opacity-0">
-        <DialogOverlay class="fixed inset-0 bg-black bg-opacity-25" />
+        <DialogOverlay class="fixed inset-0 bg-black bg-opacity-25 backdrop-blur" />
       </TransitionChild>
 
       <TransitionChild
@@ -68,7 +68,7 @@
           method="POST"
           action="?/edit"
           use:enhance
-          class="my-8 inline-block w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+          class="my-8 inline-block w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-black">
           <DialogTitle as="h3" class="text-center text-3xl font-semibold">Edit Poll</DialogTitle>
 
           <div class="mt-4 grid gap-y-4 gap-x-6 sm:grid-cols-2">
@@ -83,7 +83,7 @@
                   value={poll.title}
                   required
                   bind:this={titleInput}
-                  class="block w-full rounded-md border-gray-300" />
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
               </div>
             </div>
 
@@ -97,7 +97,7 @@
                   maxlength="255"
                   value={poll.description ?? ""}
                   placeholder="Optional"
-                  class="block w-full rounded-md border-gray-300" />
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
               </div>
             </div>
 
@@ -114,20 +114,20 @@
                     value={poll.options[i]?.title ?? ""}
                     placeholder="Option #{i + 1}"
                     bind:this={optionInputs[i]}
-                    class="mt-1 block w-full rounded-md border-gray-300" />
+                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
                 </div>
               {/each}
               <div class="mt-2 flex items-center justify-end gap-2">
                 <button
                   type="button"
-                  class="rounded-lg bg-gray-200 p-2 disabled:cursor-not-allowed disabled:bg-gray-300"
+                  class="rounded-lg bg-gray-200 p-2 disabled:cursor-not-allowed disabled:bg-gray-300 dark:bg-gray-700 dark:disabled:bg-gray-800"
                   disabled={optionCount <= 2}
                   on:click={() => optionCount > 2 && optionCount--}>
                   <MinusIcon class="h-4 w-4" />
                 </button>
                 <button
                   type="button"
-                  class="rounded-lg bg-gray-200 p-2"
+                  class="rounded-lg bg-gray-200 p-2 dark:bg-gray-700"
                   on:click={() => optionCount++}>
                   <PlusIcon class="h-4 w-4" />
                 </button>
@@ -142,7 +142,7 @@
                   name="security"
                   id="security"
                   value={poll.security}
-                  class="block w-full rounded-md border-gray-300">
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900">
                   <option value="none">None</option>
                   <option value="ipAddress">Check IP Address</option>
                 </select>
@@ -160,7 +160,7 @@
                   maxlength="255"
                   required
                   bind:this={slugInput}
-                  class="block w-full rounded-md border-gray-300" />
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
               </div>
             </div>
 
@@ -173,7 +173,7 @@
                   id="endsAt"
                   value={endsAtValue}
                   on:input={handleEndsAtInputChange}
-                  class="block w-full rounded-md border-gray-300" />
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
                 <input
                   type="hidden"
                   name="endsAtTimestamp"
@@ -192,7 +192,7 @@
                   placeholder="https://example.com/api/poll-results"
                   value={poll.webhook ?? ""}
                   bind:this={webhookInput}
-                  class="block w-full rounded-md border-gray-300" />
+                  class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900" />
               </div>
             </div>
           </div>
@@ -201,7 +201,8 @@
             <button
               type="button"
               on:click={() => close()}
-              class="rounded-lg bg-gray-200 px-3 py-2 text-lg text-black">Cancel</button>
+              class="rounded-lg bg-gray-200 px-3 py-2 text-lg text-black dark:bg-gray-600 dark:text-white"
+              >Cancel</button>
             <button
               on:click={() => {
                 if (
@@ -216,7 +217,7 @@
                 }
                 close();
               }}
-              class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white">
+              class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-lg text-white dark:bg-white dark:text-black">
               <CheckIcon class="h-6 w-6" /> Save
             </button>
           </div>

@@ -21,7 +21,7 @@
 <div class="flex h-screen w-full flex-col sm:flex-row">
   <Sidebar {polls} bind:show={showSidebar} />
   <main
-    class="flex-grow overflow-y-auto bg-gray-50 sm:flex"
+    class="flex-grow overflow-y-auto bg-gray-50 dark:bg-transparent sm:flex"
     class:flex={!showSidebar}
     class:hidden={showSidebar}
     class:justify-center={$page.url.pathname === "/dashboard"}>
