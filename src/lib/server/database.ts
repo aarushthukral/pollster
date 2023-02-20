@@ -1,6 +1,5 @@
 import { Deta } from "deta";
-
-const projectKey = process.env.DETA_PROJECT_KEY || "project key";
+import { DETA_PROJECT_KEY as projectKey } from "$env/static/private";
 
 const deta = Deta(projectKey);
 
