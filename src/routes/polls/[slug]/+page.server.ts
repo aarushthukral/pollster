@@ -13,6 +13,15 @@ export const load = (async (event) => {
 
   const poll = res.items[0] as Poll;
 
+  if (poll.endsAt && poll.endsAt < Date.now()) {
+    const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
+    return {
+      alreadyVoted: true,
+      poll,
+      results: getPercentageResults(allVotes, poll),
+    };
+  }
+
   if (poll.security === "ipAddress") {
     const ipAddress = event.getClientAddress();
     const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
@@ -47,6 +56,10 @@ export const actions = {
       throw error(400, { message: "Invalid option ID" });
     }
 
+    if (poll.endsAt && poll.endsAt < Date.now()) {
+      throw error(400, { message: "This poll has already ended" });
+    }
+
     const ipAddress = event.getClientAddress();
     const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
 
@@ -62,6 +75,7 @@ export const actions = {
       poll: poll.key,
       option,
       ipAddress,
+      createdAt: Date.now(),
     };
 
     await votes.put(newVote);

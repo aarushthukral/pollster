@@ -21,6 +21,7 @@ export type Vote = {
   key: string;
   poll: string;
   option: string;
+  createdAt: number;
   ipAddress?: string;
 };
 

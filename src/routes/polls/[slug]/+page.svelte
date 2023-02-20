@@ -16,7 +16,6 @@
   export let data: PageData;
   $: poll = data.poll;
   $: pollOptions = data.poll.options;
-  let alreadyVoted = data.alreadyVoted;
 
   export let form: ActionData;
   $: voted = form?.voted || data.alreadyVoted;
@@ -91,9 +90,6 @@
         <LockClosedIcon class="h-4 w-4" /> Your IP address will be stored to prevent duplicate responses
       </div>
     {:else}
-      {#if alreadyVoted}
-        <div class="flex justify-center">You have already voted in this poll</div>
-      {/if}
       <div class="flex justify-center gap-1">
         Powered by
         <a
