@@ -2,6 +2,7 @@
   import { ChartBarIcon } from "@rgossiaux/svelte-heroicons/outline";
   import Meta from "$lib/components/Meta.svelte";
   import { page } from "$app/stores";
+  import AwardIcon from "$lib/components/AwardIcon.svelte";
   import GitHubIcon from "$lib/components/GitHubIcon.svelte";
   import Logo from "$lib/components/Logo.svelte";
 </script>
@@ -16,7 +17,10 @@
 
 <main class="flex min-h-screen flex-col">
   <div class="my-auto flex flex-col items-center">
-    <div class="flex items-center gap-4">
+    <p class="inline-flex items-center gap-1.5 text-xl">
+      Deta Shipathon 2023 <AwardIcon class="h-5 w-5" /> <span class="font-medium">Best App</span>
+    </p>
+    <div class="mt-3 flex items-center gap-4">
       <Logo class="h-12 w-12 sm:h-20 sm:w-20" />
       <h1 class="select-none text-center text-6xl font-bold sm:text-8xl">Pollster</h1>
     </div>

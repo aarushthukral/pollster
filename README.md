@@ -1,4 +1,5 @@
 <div align="center">
+  <p style="font-weight: bold;">Deta Shipathon 2023 🏆 Best App</p>
   <a href="https://github.com/aarushthukral/pollster">
     <img src="static/icon.png" alt="Logo" width="128" height="128">
   </a>
@@ -8,6 +9,9 @@
   <p align="center">
     Make every voice count, with polls that matter.
   </p>
+  <a href="https://deta.space/discovery/@aarushth/pollster">
+    <img src="https://deta.space/buttons/dark.svg" height="50" />
+  </a>
 
   <br />
   <img src="static/poll-screenshot.png" alt="A screenshot of a poll with the question: What's your favourite color?" />
