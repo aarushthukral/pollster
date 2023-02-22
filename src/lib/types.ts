@@ -14,7 +14,7 @@ export type Poll = {
     image?: string;
   }[];
   slug: string;
-  security: "none" | "ipAddress";
+  security: "none" | "ipAddress" | "session";
 };
 
 export type Vote = {

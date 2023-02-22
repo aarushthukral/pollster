@@ -143,8 +143,7 @@
               </div>
             </div>
 
-            <!-- Due to limitations with Deta, security can only be set to none. -->
-            <div class="col-span-1 hidden">
+            <div class="col-span-1">
               <label for="security" class="text-md ml-1 block font-medium">Security</label>
               <div>
                 <select
@@ -153,7 +152,7 @@
                   value="none"
                   class="block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900">
                   <option value="none">None</option>
-                  <option value="ipAddress">Check IP Address</option>
+                  <option value="session">Browser Session</option>
                 </select>
               </div>
             </div>

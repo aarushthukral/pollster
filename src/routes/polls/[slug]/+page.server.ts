@@ -12,32 +12,23 @@ export const load = (async (event) => {
   }
 
   const poll = res.items[0] as Poll;
+  const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
+  const results = getPercentageResults(allVotes, poll);
+  let alreadyVoted = false;
 
   if (poll.endsAt && poll.endsAt < Date.now()) {
-    const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
-    return {
-      alreadyVoted: true,
-      poll,
-      results: getPercentageResults(allVotes, poll),
-    };
+    alreadyVoted = true;
   }
 
   if (poll.security === "ipAddress") {
     const ipAddress = event.getClientAddress();
-    const allVotes = (await votes.fetch({ poll: poll.key })).items as Vote[];
-    const alreadyVoted = allVotes.filter((vote) => vote.ipAddress === ipAddress).length;
-    if (alreadyVoted) {
-      return {
-        alreadyVoted: true,
-        poll,
-        results: getPercentageResults(allVotes, poll),
-      };
-    }
+    alreadyVoted = !!allVotes.filter((vote) => vote.ipAddress === ipAddress).length;
   }
 
   return {
-    alreadyVoted: false,
+    alreadyVoted,
     poll,
+    results,
   };
 }) satisfies PageServerLoad;
 

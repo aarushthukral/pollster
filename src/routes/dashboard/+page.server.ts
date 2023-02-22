@@ -23,7 +23,7 @@ export const actions = {
     }
 
     const security = data.get("security")?.toString() || undefined;
-    if (!security || !["none", "ipAddress"].includes(security.toString())) {
+    if (!security || !["none", "ipAddress", "session"].includes(security.toString())) {
       throw error(400, { message: "Invalid security type" });
     }
 
